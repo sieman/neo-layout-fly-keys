@@ -15,11 +15,10 @@
 
 
 ;;; Code:
-
-(require 'xah-fly-keys)
-(require 'avy)
-(require 'multiple-cursors)
-(require 'expand-region)
+(eval-after-load 'xah-fly-keys '(require 'xah-fly-keys))
+(eval-after-load 'avy '(require 'avy))
+(eval-after-load 'multiple-cursors '(require 'multiple-cursors))
+(eval-after-load 'expand-region '(require 'expand-region))
 
 (defvar xah--dvorak-to-neo2-kmap
   '(("." . "l") ; e
