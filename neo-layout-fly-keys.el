@@ -1,4 +1,4 @@
-;;; neo2-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys
+;;; neo-layout-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys
 
 ;; Copyright © 2021, by Siegmar Mantei
 
@@ -15,7 +15,7 @@
 
 
 ;;; Code:
-;; (require 'xah-fly-keys)
+(require 'xah-fly-keys)
 
 
 (defvar xah--dvorak-to-neo2-kmap
@@ -120,4 +120,5 @@
   
   )
 
-(provide 'neo2-fly-keys)
+(provide 'neo-layout-fly-keys)
+;;; neo-layout-fly-keys.el ends here
