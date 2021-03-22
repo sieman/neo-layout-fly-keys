@@ -1,12 +1,21 @@
-;;; package --- Summary
-;;;
+;;; neo2-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys
+
+;; Copyright © 2021, by Siegmar Mantei
+
+
+;; Author: Siegmar Mantei
+;; Version: 0.0.1
+;; Created: 22 March 2021
+;; Package-Requires: ((emacs "24.1"))
+;; Keywords: convenience, emulations, vim, ergoemacs, configuration
+;; License: GPL v3
 
 ;;; Commentary:
 ;;; see some doc http://ergoemacs.org/misc/xah-fly-keys_customization.html
 
 
 ;;; Code:
-(require 'xah-fly-keys)
+;; (require 'xah-fly-keys)
 
 
 (defvar xah--dvorak-to-neo2-kmap
