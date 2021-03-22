@@ -1,0 +1,1 @@
+* A Neo2 keyboard layout configuration for Xah Lee's Fly Keys
