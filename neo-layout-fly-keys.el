@@ -1,7 +1,6 @@
-;;; neo-layout-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys
+;;; neo-layout-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys -*- lexical-binding: t; -*-
 
 ;; Copyright © 2021, by Siegmar Mantei
-
 
 ;; Author: Siegmar Mantei
 ;; Version: 0.0.1
@@ -11,11 +10,13 @@
 ;; License: GPL v3
 
 ;;; Commentary:
-;;; see some doc http://ergoemacs.org/misc/xah-fly-keys_customization.html
 
+;; see some doc http://ergoemacs.org/misc/xah-fly-keys_customization.html
+;; This is a configuration for xah-fly-keys package and adapted to neo2 keyboard layout.
 
 ;;; Code:
-(eval-after-load 'xah-fly-keys '(require 'xah-fly-keys))
+
+(require 'xah-fly-keys)
 (eval-after-load 'avy '(require 'avy))
 (eval-after-load 'multiple-cursors '(require 'multiple-cursors))
 (eval-after-load 'expand-region '(require 'expand-region))
@@ -60,7 +61,7 @@
 
 
 
-
+;;;###autoload
 (defun neo2/flykeys-on ()
   "Switch xah-fly-keys on with neo2 settings."
   (interactive)
@@ -117,12 +118,11 @@
   (define-key xah-fly-key-map (kbd ".")  'xah-insert-space-before)
   (define-key xah-fly-key-map (kbd "j") 'xah-goto-matching-bracket))
 
+;;;###autoload
 (defun neo2/flykeys-off ()
   "Simply turn off xah-fly-keys."
   (interactive)
-  (xah-fly-keys-off)
-  
-  )
+  (xah-fly-keys-off))
 
 (provide 'neo-layout-fly-keys)
 
