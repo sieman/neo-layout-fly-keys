@@ -79,6 +79,8 @@
   (define-key xah-fly-key-map (kbd "9") 'xah-select-text-in-quote)
   (define-key xah-fly-key-map (kbd "0") 'xah-pop-local-mark-ring)
 
+  (define-key xah-fly-key-map (kbd "DEL") 'backward-delete-char-untabify)
+
   (define-key xah-fly-key-map (kbd "[") 'xah-backward-punct) ; M3 + l
   (define-key xah-fly-key-map (kbd "]") 'xah-forward-punct) ; M3 + c
   (define-key xah-fly-key-map (kbd "\"") 'other-frame) ; M3 + ,
