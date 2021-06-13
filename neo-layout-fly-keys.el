@@ -17,49 +17,58 @@
 ;;; Code:
 
 (require 'xah-fly-keys)
-(eval-after-load 'avy '(require 'avy))
-(eval-after-load 'multiple-cursors '(require 'multiple-cursors))
-(eval-after-load 'expand-region '(require 'expand-region))
+
+;; (eval-after-load 'avy '(require 'avy))
+;; (eval-after-load 'multiple-cursors '(require 'multiple-cursors))
+;; (eval-after-load 'expand-region '(require 'expand-region))
 
 (defvar xah--dvorak-to-neo2-kmap
-  '(("." . "l") ; e
-    ("," . "v") ; w
-    ("'" . "x") ; q
-    (";" . "ü") ; y
-    ("/" . "ß") ; ü
-    ("[" . "-") ; - ; ß
-    ("]" . "]") ; diacritic glyph ` ; ´
-    ("=" . "=") ; diacritic glyph ´ ; +
-    ("-" . "y") ; ä
-    ("a" . "u") ; a
-    ("b" . "b") ; n
-    ("c" . "g") ; i
-    ("d" . "s") ; h
-    ("e" . "a") ; d
-    ("f" . "k") ; z
-    ("g" . "h") ; u
-    ("h" . "n") ; j
-    ("i" . "o") ; g
-    ("j" . "ä") ; c
-    ("k" . "p") ; v
-    ("l" . "q") ; p
-    ("m" . "m") ; m
-    ("n" . "t") ; l
-    ("o" . "i") ; s
-    ("p" . "c") ; r
-    ("q" . "ö") ; x
-    ("r" . "f") ; o
-    ("s" . "d") ; ö
-    ("t" . "r") ; k
-    ("u" . "e") ; f
-    ("v" . ".") ; .
-    ("w" . ",") ; ,
-    ("x" . "z") ; b
-    ("y" . "w") ; t
-    ("z" . "j")) ; -
-  "A alist, each element is of the form(\"e\" . \"d\"). First char is Dvorak, second is corresponding NEO2. Not all chars are in the list, such as digits. When not in this alist, they are assumed to be the same.")
+  '(
+    ("'" . "x")
+    ("," . "v")
+    ("." . "l")
+    ("p" . "c")
+    ("y" . "w")
 
+    ("f" . "k")
+    ("g" . "h")
+    ("c" . "g")
+    ("r" . "f")
+    ("l" . "q")
 
+    ("a" . "u")
+    ("o" . "i")
+    ("e" . "a")
+    ("u" . "e")
+    ("i" . "o")
+
+    ("d" . "s")
+    ("h" . "n")
+    ("t" . "r")
+    ("n" . "t")
+    ("s" . "d")
+
+    (";" . "ü")
+    ("q" . "ö")
+    ("j" . "ä")
+    ("k" . "p")
+    ("x" . "z")
+
+    ("b" . "b")
+    ("m" . "m")
+    ("w" . ",")
+    ("v" . ".")
+    ("z" . "j")
+
+    ("/" . "ß")
+    ("[" . "-")
+    ("-" . "y"))
+  "A alist, each element is of the form(\"e\" . \"d\"). First char is Dvorak, second is corresponding neo2 layout. Not all chars are in the list, such as digits. When not in this alist, they are assumed to be the same.")
+
+(defun neo2/insert-mode ()
+  (interactive)
+  (xah-fly-insert-mode-activate)
+  (insert last-input-event))
 
 ;;;###autoload
 (defun neo2/flykeys-on ()
@@ -80,10 +89,6 @@
   (define-key xah-fly-key-map (kbd "0") 'xah-pop-local-mark-ring)
 
   (define-key xah-fly-key-map (kbd "DEL") 'backward-delete-char-untabify)
-
-  (define-key xah-fly-key-map (kbd "[") 'xah-backward-punct) ; M3 + l
-  (define-key xah-fly-key-map (kbd "]") 'xah-forward-punct) ; M3 + c
-  (define-key xah-fly-key-map (kbd "\"") 'other-frame) ; M3 + ,
 
   (define-key xah-fly-key-map (kbd "x") 'xah-reformat-lines)
   (define-key xah-fly-key-map (kbd "v") 'xah-backward-kill-word)
@@ -118,7 +123,101 @@
   (define-key xah-fly-key-map (kbd "m") 'xah-shrink-whitespaces)
   (define-key xah-fly-key-map (kbd ",")  'xah-next-window-or-frame)
   (define-key xah-fly-key-map (kbd ".")  'xah-insert-space-before)
-  (define-key xah-fly-key-map (kbd "j") 'xah-goto-matching-bracket))
+  (define-key xah-fly-key-map (kbd "j") 'xah-goto-matching-bracket)
+
+  (define-key xah-fly-key-map (kbd "§") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "§") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "ℓ") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "»") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "«") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "$") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "€") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "„") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "“") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "”") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "—") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "X") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "V") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "L") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "C") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "W") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "K") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "H") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "G") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "F") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "Q") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "ẞ") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "U") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "I") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "A") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "E") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "O") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "S") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "N") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "R") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "T") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "D") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "Y") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "Ü") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "Ö") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "Ä") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "P") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "Z") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "B") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "M") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "–") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "•") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "J") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "¹") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "²") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "³") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "›") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "›") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "‹") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "¢") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "¥") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "‚") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "‘") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "’") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "_") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "_") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "[") 'xah-backward-punct)
+  (define-key xah-fly-key-map (kbd "]") 'xah-forward-punct)
+  (define-key xah-fly-key-map (kbd "^") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "!") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "<") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd ">") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "=") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "&") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "ſ") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "\\") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "/") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "{") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "}") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "*") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "?") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "(") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd ")") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "-") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd ":") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "@") 'neo2/insert-mode)
+
+  (define-key xah-fly-key-map (kbd "#") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "$") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "|") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "~") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "`") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "+") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "%") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "\"") 'other-frame)
+  (define-key xah-fly-key-map (kbd "'") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd ";") 'neo2/insert-mode))
 
 ;;;###autoload
 (defun neo2/flykeys-off ()
@@ -127,5 +226,4 @@
   (xah-fly-keys-off))
 
 (provide 'neo-layout-fly-keys)
-
 ;;; neo-layout-fly-keys.el ends here
