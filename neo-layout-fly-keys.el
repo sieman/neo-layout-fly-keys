@@ -15,7 +15,7 @@
 ;; This is a configuration for xah-fly-keys package and adapted to neo2 keyboard layout.
 
 ;;; Code:
-
+(setq xah-fly-use-control-key nil)
 (require 'xah-fly-keys)
 
 ;; (eval-after-load 'avy '(require 'avy))
@@ -201,7 +201,7 @@
   (define-key xah-fly-key-map (kbd "{") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "}") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "*") 'neo2/insert-mode)
-  (define-key xah-fly-key-map (kbd "?") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "?") 'beginning-of-buffer)
   (define-key xah-fly-key-map (kbd "(") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd ")") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "-") 'neo2/insert-mode)
@@ -213,17 +213,12 @@
   (define-key xah-fly-key-map (kbd "|") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "~") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "`") 'neo2/insert-mode)
-  (define-key xah-fly-key-map (kbd "+") 'neo2/insert-mode)
+  (define-key xah-fly-key-map (kbd "+") 'end-of-buffer)
   (define-key xah-fly-key-map (kbd "%") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd "\"") 'other-frame)
   (define-key xah-fly-key-map (kbd "'") 'neo2/insert-mode)
   (define-key xah-fly-key-map (kbd ";") 'neo2/insert-mode))
 
 ;;;###autoload
-(defun neo2/flykeys-off ()
-  "Simply turn off xah-fly-keys."
-  (interactive)
-  (xah-fly-keys-off))
-
 (provide 'neo-layout-fly-keys)
 ;;; neo-layout-fly-keys.el ends here
