@@ -22,49 +22,6 @@
 ;; (eval-after-load 'multiple-cursors '(require 'multiple-cursors))
 ;; (eval-after-load 'expand-region '(require 'expand-region))
 
-(defvar xah--dvorak-to-neo2-kmap
-  '(
-    ("'" . "x")
-    ("," . "v")
-    ("." . "l")
-    ("p" . "c")
-    ("y" . "w")
-
-    ("f" . "k")
-    ("g" . "h")
-    ("c" . "g")
-    ("r" . "f")
-    ("l" . "q")
-
-    ("a" . "u")
-    ("o" . "i")
-    ("e" . "a")
-    ("u" . "e")
-    ("i" . "o")
-
-    ("d" . "s")
-    ("h" . "n")
-    ("t" . "r")
-    ("n" . "t")
-    ("s" . "d")
-
-    (";" . "ü")
-    ("q" . "ö")
-    ("j" . "ä")
-    ("k" . "p")
-    ("x" . "z")
-
-    ("b" . "b")
-    ("m" . "m")
-    ("w" . ",")
-    ("v" . ".")
-    ("z" . "j")
-
-    ("/" . "ß")
-    ("[" . "-")
-    ("-" . "y"))
-  "A alist, each element is of the form(\"e\" . \"d\"). First char is Dvorak, second is corresponding neo2 layout. Not all chars are in the list, such as digits. When not in this alist, they are assumed to be the same.")
-
 (defun neo2/insert-mode ()
   (interactive)
   (xah-fly-insert-mode-activate)
