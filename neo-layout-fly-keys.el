@@ -48,9 +48,9 @@
   (define-key xah-fly-command-map (kbd "DEL") 'backward-delete-char-untabify)
 
   (define-key xah-fly-command-map (kbd "x") 'xah-reformat-lines)
-  (define-key xah-fly-command-map (kbd "v") 'xah-backward-kill-word)
+  (define-key xah-fly-command-map (kbd "v") 'backward-kill-word)
   (define-key xah-fly-command-map (kbd "l") 'xah-beginning-of-line-or-block)
-  (define-key xah-fly-command-map (kbd "c") 'xah-kill-word)
+  (define-key xah-fly-command-map (kbd "c") 'kill-word)
   (define-key xah-fly-command-map (kbd "w") 'xah-delete-current-text-block)
   (define-key xah-fly-command-map (kbd "k") 'xah-toggle-letter-case)
   (define-key xah-fly-command-map (kbd "h") 'er/contract-region) ;
