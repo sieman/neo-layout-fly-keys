@@ -63,7 +63,7 @@
   (define-key xah-fly-command-map (kbd "i") 'backward-word)
   (define-key xah-fly-command-map (kbd "a") 'xah-end-of-line-or-block)
   (define-key xah-fly-command-map (kbd "e") 'forward-word)
-  (define-key xah-fly-command-map (kbd "o") 'open-line)
+  (define-key xah-fly-command-map (kbd "o") 'xah-insert-space-before)
   (define-key xah-fly-command-map (kbd "s") 'avy-goto-char-2)
   (define-key xah-fly-command-map (kbd "n") 'xah-backward-left-bracket)
   (define-key xah-fly-command-map (kbd "r") 'xah-fly-insert-mode-activate)
@@ -79,7 +79,7 @@
   (define-key xah-fly-command-map (kbd "b") 'isearch-forward)
   (define-key xah-fly-command-map (kbd "m") 'xah-shrink-whitespaces)
   (define-key xah-fly-command-map (kbd ",")  'xah-next-window-or-frame)
-  (define-key xah-fly-command-map (kbd ".")  'xah-insert-space-before)
+  (define-key xah-fly-command-map (kbd ".")  'open-line)
   (define-key xah-fly-command-map (kbd "j") 'xah-goto-matching-bracket)
 
   (define-key xah-fly-command-map (kbd "§") 'neo2/insert-mode)
