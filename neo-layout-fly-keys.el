@@ -122,7 +122,7 @@
   (define-key xah-fly-command-map (kbd "Ö") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "Ä") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "P") 'neo2/insert-mode)
-  (define-key xah-fly-command-map (kbd "Z") 'neo2/insert-mode)
+  (define-key xah-fly-command-map (kbd "Z") 'redo)
   (define-key xah-fly-command-map (kbd "B") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "M") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "–") 'neo2/insert-mode)
