@@ -59,7 +59,7 @@
   (define-key xah-fly-command-map (kbd "q") 'mc/mark-previous-like-this)
   (define-key xah-fly-command-map (kbd "ß") 'hippie-expand)
 
-  (define-key xah-fly-command-map (kbd "u") 'xah-fly-M-x)
+  (define-key xah-fly-command-map (kbd "u") 'execute-extended-command)
   (define-key xah-fly-command-map (kbd "i") 'backward-word)
   (define-key xah-fly-command-map (kbd "a") 'xah-end-of-line-or-block)
   (define-key xah-fly-command-map (kbd "e") 'forward-word)
