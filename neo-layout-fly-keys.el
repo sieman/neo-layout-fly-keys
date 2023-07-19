@@ -1,5 +1,5 @@
 ;;; neo-layout-fly-keys.el ---- A Neo2 keyboard layout configuration for Xah Lee's Fly Keys -*- lexical-binding: t; -*-
-
+;; URL: https://github.com/sieman/neo-layout-fly-keys
 ;; Copyright © 2021, by Siegmar Mantei
 
 ;; Author: Siegmar Mantei
@@ -69,7 +69,7 @@
   (define-key xah-fly-command-map (kbd "r") 'xah-fly-insert-mode-activate)
   (define-key xah-fly-command-map (kbd "t") 'xah-forward-right-bracket)
   (define-key xah-fly-command-map (kbd "d") 'mc/mark-next-like-this)
-  (define-key xah-fly-command-map (kbd "y") 'xah-cycle-hyphen-underscore-space)
+  (define-key xah-fly-command-map (kbd "y") 'xah-cycle-hyphen-lowline-space)
 
   (define-key xah-fly-command-map (kbd "ü") 'xah-comment-dwim)
   (define-key xah-fly-command-map (kbd "ö") 'xah-cut-line-or-region)
