@@ -31,7 +31,7 @@
 (defun neo2/flykeys-on ()
   "Switch xah-fly-keys on with neo2 settings."
   (interactive)
-  (xah-fly-keys-set-layout 'neo2)
+  (xah-fly-keys-set-layout "neo2")
   (xah-fly-keys 1)
 
   (define-key xah-fly-command-map (kbd "1") 'xah-extend-selection)
