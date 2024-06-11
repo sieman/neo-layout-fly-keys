@@ -3,7 +3,7 @@
 ;; Copyright © 2021, by Siegmar Mantei
 
 ;; Author: Siegmar Mantei
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Created: 22 March 2021
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: convenience, emulations, vim, ergoemacs, configuration
@@ -22,10 +22,23 @@
 ;; (eval-after-load 'multiple-cursors '(require 'multiple-cursors))
 ;; (eval-after-load 'expand-region '(require 'expand-region))
 
-(defun neo2/insert-mode ()
+(defun neo2/insert-mode (f)
   (interactive)
   (xah-fly-insert-mode-activate)
-  (insert last-input-event))
+  (if (= f nil)
+      (insert last-input-event)
+    (f))
+  )
+
+(defun neo2/insert-mode (&optional f)
+    (interactive)
+    (xah-fly-insert-mode-activate)
+    (if  f
+        (f)
+      (insert last-input-event)
+      )
+    )
+
 
 ;;;###autoload
 (defun neo2/flykeys-on ()
