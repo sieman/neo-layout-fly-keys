@@ -22,22 +22,17 @@
 ;; (eval-after-load 'multiple-cursors '(require 'multiple-cursors))
 ;; (eval-after-load 'expand-region '(require 'expand-region))
 
-(defun neo2/insert-mode (f)
+(defun neo2/insert-mode ()
+  "Go to insert mode and insert last input event."
   (interactive)
   (xah-fly-insert-mode-activate)
-  (if (= f nil)
-      (insert last-input-event)
-    (f))
-  )
+  (insert last-input-event))
 
-(defun neo2/insert-mode (&optional f)
-    (interactive)
-    (xah-fly-insert-mode-activate)
-    (if  f
-        (f)
-      (insert last-input-event)
-      )
-    )
+;; (defun neo2/insert-mode-f (CALLEE)
+;; "Go to insert mode and execute giffen CALLEE function."
+;; (interactive)
+;; (xah-fly-insert-mode-activate)
+;; (funcall CALLEE))
 
 
 ;;;###autoload
