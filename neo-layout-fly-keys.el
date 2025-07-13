@@ -3,7 +3,7 @@
 ;; Copyright © 2021, by Siegmar Mantei
 
 ;; Author: Siegmar Mantei
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Created: 22 March 2021
 ;; Package-Requires: ((emacs "24.1"))
 ;; Keywords: convenience, emulations, vim, ergoemacs, configuration
@@ -39,6 +39,19 @@
 (defun neo2/flykeys-on ()
   "Switch xah-fly-keys on with neo2 settings."
   (interactive)
+  (puthash "neo2" "
+ˇ ° § ℓ » « $ € „ “ ” — ¸
+^ 1 2 3 4 5 6 7 8 9 0 - `
+
+x v l c w k h g f q ß ´ \\
+u i a e o s n r t d y
+ü ö ä p z b m , . j
+
+X V L C W K H G F Q ẞ ~ |
+U I A E O S N R T D Y
+Ü Ö Ä P Z B M – • J
+" xah-fly-layout-diagrams)
+
   (xah-fly-keys-set-layout "neo2")
   (xah-fly-keys 1)
 
