@@ -72,7 +72,7 @@ U I A E O S N R T D Y
   (define-key xah-fly-command-map (kbd "v") 'backward-kill-word)
   (define-key xah-fly-command-map (kbd "l") 'xah-beginning-of-line-or-block)
   (define-key xah-fly-command-map (kbd "c") 'kill-word)
-  (define-key xah-fly-command-map (kbd "w") 'xah-delete-current-text-block)
+  (define-key xah-fly-command-map (kbd "w") 'xah-smart-delete)
   (define-key xah-fly-command-map (kbd "k") 'xah-toggle-letter-case)
   (define-key xah-fly-command-map (kbd "h") 'er/contract-region) ;
   (define-key xah-fly-command-map (kbd "g") 'set-mark-command)
@@ -119,7 +119,7 @@ U I A E O S N R T D Y
   (define-key xah-fly-command-map (kbd "V") 'mc/edit-beginnings-of-lines)
   (define-key xah-fly-command-map (kbd "L") 'mc/edit-lines)
   (define-key xah-fly-command-map (kbd "C") 'mc/edit-ends-of-lines)
-  (define-key xah-fly-command-map (kbd "W") 'neo2/insert-mode)
+  (define-key xah-fly-command-map (kbd "W") 'xah-delete-current-text-block)
   (define-key xah-fly-command-map (kbd "K") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "H") 'neo2/insert-mode)
   (define-key xah-fly-command-map (kbd "G") 'mc/mark-previous-like-this)
